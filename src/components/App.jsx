@@ -11,25 +11,20 @@ const HomePage = lazy(() => import('../pages/Home'));
 const TweetsPage = lazy(() => import('../pages/Users'));
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isRefreshing = useSelector(selectIsRefreshing);
+  // const dispatch = useDispatch();
+  // const isRefreshing = useSelector(selectIsRefreshing);
 
   // useEffect(() => {
   //   dispatch(refreshUser());
   // }, [dispatch]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
+  return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
           path="/users"
-          element={
-            <PrivateRoute redirectTo="/users" component={<TweetsPage />} />
-          }
-        />
+          element={<TweetsPage />} />
       </Route>
     </Routes>
   );
