@@ -15,9 +15,9 @@ export const CardUser = () => {
     const getVisibleUsers = (users, statusFilter) => {
   switch (statusFilter) {
     case statusFilters.follow:
-      return users.filter(user => user.isFollow);
-    case statusFilters.followings:
       return users.filter(user => !user.isFollow);
+    case statusFilters.followings:
+      return users.filter(user => user.isFollow);
     default:
       return users;
   }
