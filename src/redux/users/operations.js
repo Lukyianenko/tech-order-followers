@@ -6,12 +6,21 @@ axios.defaults.baseURL = "https://6447f0037bb84f5a3e4dccfa.mockapi.io";
 export const fetchUsers = createAsyncThunk(
     'users/fetchAll',
     async (_, thunkAPI) => {
-      try {
-        const res = await axios.get('/users');
-        return res.data;
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-      }
+      const state = thunkAPI.getState();
+      const tweets = state.user.users.items;
+        try {
+          const res = await axios.get('/users');
+          const datas = [];
+          for (let i = 0; i < res.data.length; i += 1) {
+            const itemData = tweets[i] ? tweets[i].isFollow : false;
+            const item2Data = res.data[i];
+            const arrData = {...item2Data, isFollow: itemData};
+            datas.push(arrData);
+          }
+         return datas;
+        } catch (error) {
+          return thunkAPI.rejectWithValue(error.message);
+        }      
     }
   );
 

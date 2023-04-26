@@ -28,9 +28,7 @@ export const usersSlice = createSlice({
           [fetchUsers.fulfilled](state, action) {
             state.users.isLoading = false;
             state.users.error = null;
-            state.users.items = action.payload.map(item => (
-              {...item, isFollow: false}
-            ));
+            state.users.items = action.payload;
           },
           [fetchUsers.rejected](state, action) {
             state.users.isLoading = false;

@@ -11,8 +11,6 @@ import fone from "../../images/fone.png";
 export const CardUser = () => {
     const users = useSelector(getUsers);
     const dispatch = useDispatch();
-    console.log(users);
-
     const filter = useSelector(getStatusFilter);
     const getVisibleUsers = (users, statusFilter) => {
   switch (statusFilter) {
@@ -25,11 +23,10 @@ export const CardUser = () => {
   }
 };
 
-
     const visibleUsers = getVisibleUsers(users, filter);
     return (
         visibleUsers.map(item => {
-            const handleFollow = () => {
+            const handleFollow = (e) => {
                 dispatch(followUser(item));
             }
             return (
@@ -43,7 +40,8 @@ export const CardUser = () => {
             <p className={css.tweets}>{item.tweets} TWEETS</p>
             <p className={css.followers}>{(item.followers/1000).toFixed(3).toString().replace(".", ",")} FOLLOWERS</p>
             <Button selected={item.isFollow}
-                type="button" onClick={handleFollow}>FOLLOW</Button>
+                type="button" 
+                onClick={handleFollow}>{item.isFollow ? "FOLLOWINGS" : "FOLLOW"}</Button>
             </li>
             )
             
