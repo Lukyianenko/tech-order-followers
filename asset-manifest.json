@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/tech-order-followers/static/css/main.7acaea2f.css",
-    "main.js": "/tech-order-followers/static/js/main.e64006c2.js",
+    "main.css": "/tech-order-followers/static/css/main.8a66824b.css",
+    "main.js": "/tech-order-followers/static/js/main.55f26b07.js",
+    "static/js/397.85be2143.chunk.js": "/tech-order-followers/static/js/397.85be2143.chunk.js",
+    "static/css/303.73f8df82.chunk.css": "/tech-order-followers/static/css/303.73f8df82.chunk.css",
+    "static/js/303.57227c62.chunk.js": "/tech-order-followers/static/js/303.57227c62.chunk.js",
+    "static/media/1616699300_58-p-zhdun-krasivo-61.jpg": "/tech-order-followers/static/media/1616699300_58-p-zhdun-krasivo-61.79698d4e4030a263d6e0.jpg",
+    "static/media/fone.png": "/tech-order-followers/static/media/fone.032662a2a907475127d7.png",
     "index.html": "/tech-order-followers/index.html",
-    "main.7acaea2f.css.map": "/tech-order-followers/static/css/main.7acaea2f.css.map",
-    "main.e64006c2.js.map": "/tech-order-followers/static/js/main.e64006c2.js.map"
+    "main.8a66824b.css.map": "/tech-order-followers/static/css/main.8a66824b.css.map",
+    "main.55f26b07.js.map": "/tech-order-followers/static/js/main.55f26b07.js.map",
+    "397.85be2143.chunk.js.map": "/tech-order-followers/static/js/397.85be2143.chunk.js.map",
+    "303.73f8df82.chunk.css.map": "/tech-order-followers/static/css/303.73f8df82.chunk.css.map",
+    "303.57227c62.chunk.js.map": "/tech-order-followers/static/js/303.57227c62.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.e64006c2.js"
+    "static/css/main.8a66824b.css",
+    "static/js/main.55f26b07.js"
   ]
 }
