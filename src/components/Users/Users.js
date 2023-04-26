@@ -1,29 +1,22 @@
 import PropTypes from 'prop-types';
-// import { TitleContact, List, ContList, ButtonList, ItemList } from './BookContacts.styled';
-import { getUsers } from "../../redux/selectors";
-import { useSelector, useDispatch } from "react-redux/es/exports";
+// import { Filter } from "./Filter";
+import { CardUser } from "./CardUser";
+import css from "./Users.module.css";
+
 
 export const Tweets = () => {
-    const users = useSelector(getUsers);
-    // const dispatch = useDispatch();
-    console.log(users);
-
-    // const filtr = useSelector(state => state.contact.filter);
-    // const normalizeFiltr = filtr.toLowerCase();
-    // const visibleContacts = contacts.filter(contact => contact.name.toLowerCase().includes(normalizeFiltr));
-
-    // const onDelete = (id) => dispatch(deleteContact(id));
-
-    // return (
-    // <ContList>
-    //     <TitleContact>Contacts</TitleContact>
-    //     <List>
-    //     {visibleContacts.map(({ id, name, phone }) => (<ItemList key={id}>{name}: {phone} 
-    //     <ButtonList type="button" onClick={() => onDelete(id)}>Delete</ButtonList>
-    //     </ItemList>))}
-    //     </List>
-    // </ContList>
-    // )
+    return (
+        <>
+        {/* <section>
+            <Filter />
+        </section> */}
+        <section className={css.sectionTweets}>
+        <ul className={css.list}>
+            <CardUser />
+        </ul>
+        </section>
+        </>
+    )
     
 }
 

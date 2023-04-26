@@ -14,3 +14,19 @@ export const fetchUsers = createAsyncThunk(
       }
     }
   );
+
+  export const followUser = createAsyncThunk(
+    "users/follow",
+    async (user, thunkAPI) => {
+      try {
+        const following = user.isFollow ? (user.followers -1) : (user.followers +1);
+        console.log(following)
+        const res = await axios.put(`/users/${user.id}`, {
+          followers: following,
+        });
+        return res.data;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+      }
+    }
+  )
