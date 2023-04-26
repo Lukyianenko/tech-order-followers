@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchUsers, followUser } from './operations';
+import { fetchUsers, followUser, loadMoreFetch } from './operations';
 import { statusFilters } from "../constans";
 
 const initialState = {
@@ -34,14 +34,13 @@ export const usersSlice = createSlice({
             state.users.isLoading = false;
             state.users.error = action.payload;
           },
-          
+          // post
           [followUser.pending](state) {
             state.users.isLoading = true;
           },
           [followUser.fulfilled](state, action) {
             state.users.isLoading = false;
             state.users.error = null;
-            console.log(action.payload);
             const index = state.users.items.findIndex(
               item => item.id === action.payload.id
             );
@@ -51,6 +50,20 @@ export const usersSlice = createSlice({
             state.users.isLoading = false;
             state.users.error = action.payload;
           },
+          // loadMore
+          [loadMoreFetch.pending](state) {
+            state.users.isLoading = true;
+          },
+          [loadMoreFetch.fulfilled](state, action) {
+            state.users.isLoading = false;
+            state.users.error = null;
+            state.users.items = action.payload;
+          },
+          [loadMoreFetch.rejected](state, action) {
+            state.users.isLoading = false;
+            state.users.error = action.payload;
+          },
+
           },
           })
 
